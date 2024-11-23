@@ -1,6 +1,23 @@
 PI=3.1415926
 class Person:
-    pass
+    def __init__(self,name:str,age:int):
+        self.name=name#attribute
+        self.age=age#attribute
+    #實體方法（instance method)
+    def echo(self):
+        print(f'我的名字是：{self.name}')
+        print(f'我的年齡是：{self.age}')
+class Student(Person):
+    def __init__(self,name:str,age:int,score:int):
+        super().__init__(name=name,age=age)
+        self.__score =score
+    @property
+    def score(self)->int:
+        return self.__score
+    def echo(self):
+        super().echo()
+        print(f'我的分數是：{self.score}')
+        
 def get_status(bmi:float)->str:
     '''
     docstring
