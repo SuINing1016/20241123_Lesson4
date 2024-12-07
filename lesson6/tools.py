@@ -10,4 +10,13 @@ def get_aqi(excel_name:str)->list[dict]:
         site:dict = {column_names[idx]:cell.value for idx,cell in enumerate(row)}    
         sheets.append(site)
 
-        return sheets
+    return sheets
+def get_sitenames(excel_name:str)->list[str]:
+    data:list[dict]=get_aqi(excel_name=excel_name)
+    sitenames:list=[]
+    for item in data:
+        sitenames.append(item['sitename'])
+    for name in sitenames:
+        print(name)
+    sitenames=list(set(sitenames))
+    return sitenames
