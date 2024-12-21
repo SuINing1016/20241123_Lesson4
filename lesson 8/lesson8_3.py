@@ -38,4 +38,3 @@ df['lat'] = pd.to_numeric(df['lat'])
 df['lng'] = pd.to_numeric(df['lng'])
 st.map(df.rename(columns={'lat': 'latitude', 'lng': 'longitude'}))
 
-#在地圖上顯示YouBike站點資訊，滑鼠滑過時，在地圖上顯示站點名稱，總車輛數，可藉車輛數，可還空位數 
